@@ -26,9 +26,8 @@ if __name__ == '__main__':
     assert os.path.exists("./outputs")
     random.seed(0)
     if "llama" in args.model:
-        tok = AutoTokenizer.from_pretrained(args.model, token="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")
-        # model = AutoModelForCausalLM.from_pretrained(args.model, token="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").to("cuda")
-        model = AutoModelForCausalLM.from_pretrained(args.model, token="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", device_map="auto", torch_dtype=torch.float16)
+        tok = AutoTokenizer.from_pretrained(args.model)
+        model = AutoModelForCausalLM.from_pretrained(args.model, device_map="auto", torch_dtype=torch.float16)
     else:
         tok = None
         model = args.model

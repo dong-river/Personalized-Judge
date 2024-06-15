@@ -1,6 +1,4 @@
 import openai
-openai.api_key = "sk-proj-csWZUquHjdwU7uHbhJ7XT3BlbkFJvNQz0l4Y0uXGOJaUlxQe"
-# from Dependency import call_model_with_retry, set_seed, call_model_new
 from openai import OpenAI
 import time
 import random
@@ -11,13 +9,13 @@ import re
 import pandas as pd
 from anthropic import Anthropic
 import cohere
-openai_api_key = "sk-proj-sMnGlGZtycS0cV4N2dlWT3BlbkFJQegvboMQqOIZQn08csAc"
+openai_api_key = "Put your API key here"
 client = OpenAI(api_key=openai_api_key)
 
-claude_api_key = "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"
+claude_api_key = "Put your API key here"
 claude_client = Anthropic(api_key = claude_api_key)
 
-cohere_api_key = "G5uoEstZiKTl26IT5lAEHdCYRHMb1nxzPzmiP982"
+cohere_api_key = "Put your API key here"
 co = cohere.Client(cohere_api_key)
 
 def dump_jsonl(dic, path):
