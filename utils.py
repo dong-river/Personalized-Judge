@@ -12,9 +12,6 @@ import cohere
 openai_api_key = "Put your API key here"
 client = OpenAI(api_key=openai_api_key)
 
-claude_api_key = "Put your API key here"
-claude_client = Anthropic(api_key = claude_api_key)
-
 cohere_api_key = "Put your API key here"
 co = cohere.Client(cohere_api_key)
 
@@ -78,16 +75,7 @@ def get_api_response(prompt, model, tokenizer = None, max_tokens = 10, temperatu
 def get_cohere_gen(prompt, system_prompt = "", model = 'command-r-plus', max_tokens = 2048, temperature = 0.7, stop_strs = None, max_depth = 3, cur_depth = 0):
     try:
         if type(prompt) == list:
-            ## In this case, make sure the prompt list is in the correct order: user, assistant, user, assistant, ...
             messages = [{"role": "user", "content": p} if idx % 2 == 0 else {"role": "assistant", "content": p} for idx, p in enumerate(prompt)]
-            # response = co.chat(
-            #     model="command-r-plus",
-            #         chat_history=[
-            #         {"role": "USER", "text": "Hey, my name is Michael!"},
-            #         {"role": "CHATBOT", "text": "Hey Michael! How can I help you today?"},
-            #     ],
-            #     message="Can you tell me about LLMs?"
-            #     )
             raise NotImplementedError
         elif type(prompt) == str:
             response = co.chat(
