@@ -7,10 +7,12 @@ conda activate judge
 pip install -r requirements.txt
 ```
 
-## Download Dataset
+## Download Dataset and Insert your API Key
 For Author Profiling (AP) on Public Reddit, please download synthetic_dataset.jsonl to the folder './ap' from this [link](https://github.com/eth-sri/llmprivacy/tree/main/data/synthetic). \
 For Empathetic Conversation (EC), please download Track 3 and Track 4 data from [link](https://codalab.lisn.upsaclay.fr/competitions/18810#learn_the_details-datasets) and then artciles from [link](https://drive.google.com/file/d/1A-7XiLxqOiibZtyDzTkHejsCtnt55atZ/view). And put these 3 CSV under './ec'. \
 For OpinionQA, please download the [data](https://worksheets.codalab.org/worksheets/0x6fb693719477478aac73fc07db333f69) to './opinions_qa'. 
+
+Then, update your API Keys in utils.py.
 
 ## Run Experiments
 ```
